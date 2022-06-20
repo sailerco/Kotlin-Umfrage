@@ -41,6 +41,7 @@ fun homeTemplate() {
             +"Show Polls"
         }
     }
+    val d = Darkmode();
+    d.showWidget();
 }
-
 

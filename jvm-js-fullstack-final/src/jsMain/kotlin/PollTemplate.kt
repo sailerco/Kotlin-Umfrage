@@ -12,6 +12,7 @@ var numberOfAnswers = 1
 fun pollTemplate() {
     document.body!!.append.div {
         form(action = "/poll") {
+            id="form"
             div {
                 label {
                     htmlFor = "title"

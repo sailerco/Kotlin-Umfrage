@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.plugin.statistics.ReportStatisticsToElasticSearch.url
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 
 val kotlinVersion = "1.6.10"
@@ -21,7 +22,6 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
-
 }
 
 kotlin {
@@ -36,6 +36,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation("org.mongodb:bson:4.5.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 // include for Common module
@@ -69,6 +70,7 @@ kotlin {
 
         val jsMain by getting {
             dependencies {
+                implementation(npm("darkmode-js", "1.5.7"))
                 implementation("io.ktor:ktor-client-js:$ktorVersion")
                 implementation("io.ktor:ktor-client-json:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")

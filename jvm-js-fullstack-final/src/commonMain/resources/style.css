@@ -34,3 +34,11 @@ form{
     margin-right: 10px;
     margin-left: 0px;
 }
+.stats{
+    padding: 5px;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 20px;
+    background: #ADC4F0;
+    color: white;
+}

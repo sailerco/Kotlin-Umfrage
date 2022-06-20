@@ -8,7 +8,7 @@ import kotlinx.serialization.encoding.Encoder
 
 @Serializable
 data class PollsModel(val name: String, val desc: String, val answers: MutableMap<String, Int>) {
-    val id: Int = desc.hashCode()
+    val id: Int = (name+desc).hashCode()
 
     companion object {
         const val path = "/polls"
